@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿甘</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="https://ibb.co/HTKp4Gc3" type="image/x-icon">
+    <!-- 给tab添加图标 -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/HTKp4Gc3/6.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/HTKp4Gc3/6.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/HTKp4Gc3/6.jpg">
+</head>
+<body>
+    <div class="container">
+        <!-- 背景动画 -->
+        <div class="background-animation">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <!-- 头部 -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>阿甘</span>
+                </div>
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>在线</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 聊天容器 -->
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <!-- 欢迎消息 -->
+                <div class="message-wrapper bot-message">
+                    <div class="avatar bot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message">
+                        <div class="message-content">
+                            <p>你好！我是你的AI助手，有什么我可以帮你的吗？</p>
+                        </div>
+                        <div class="message-time">刚刚</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <div class="input-box">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="输入你的消息..."
+                            rows="1"
+                            maxlength="1000"
+                        ></textarea>
+                        <button id="sendButton" class="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="input-footer">
+                        <span class="char-count">0/1000</span>
+                        <span class="tip">按 Shift + Enter 换行，Enter 发送</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 加载动画 -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>AI正在思考中...</p>
+            </div>
+        </div>
+
+        <!-- 提示消息 -->
+        <div class="toast" id="toast">
+            <i class="fas fa-info-circle"></i>
+            <span id="toastMessage"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
