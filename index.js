@@ -54,11 +54,15 @@ function serveStaticFile(filePath, response) {
             break;
     }
 
-    fs.readFile(filePath, (error, content) => {
+    // 确保使用绝对路径，兼容Vercel环境
+    const absolutePath = path.join(__dirname, filePath);
+    
+    fs.readFile(absolutePath, (error, content) => {
         if (error) {
+            console.error('File read error:', error);
             if (error.code == 'ENOENT') {
                 response.writeHead(404, { 'Content-Type': 'text/plain' });
-                response.end('File not found');
+                response.end('File not found: ' + filePath);
             } else {
                 response.writeHead(500, { 'Content-Type': 'text/plain' });
                 response.end('Server error');
@@ -86,17 +90,20 @@ server.on('request', async (request, response) => {
     }
 
     // 路由处理
+    console.log('Request pathname:', pathname); // 添加调试日志
+    
     if (pathname === '/' || pathname === '/index.html') {
-        serveStaticFile('./public/index.html', response);
+        serveStaticFile('public/index.html', response);
     } else if (pathname === '/style.css') {
-        serveStaticFile('./public/style.css', response);
+        serveStaticFile('public/style.css', response);
     } else if (pathname === '/script.js') {
-        serveStaticFile('./public/script.js', response);
+        serveStaticFile('public/script.js', response);
     } else if (pathname === '/api/chat' && request.method === 'POST') {
         await handleChatRequest(request, response);
     } else {
+        console.log('Route not found for:', pathname); // 添加调试日志
         response.writeHead(404, { 'Content-Type': 'text/plain' });
-        response.end('Page not found');
+        response.end('Page not found: ' + pathname);
     }
 });
 
