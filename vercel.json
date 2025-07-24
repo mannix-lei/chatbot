@@ -24,8 +24,5 @@
       "src": "/(.*)",
       "dest": "/index.js"
     }
-  ],
-  "env": {
-    "MISTRAL_API_KEY": "@mistral_api_key"
-  }
+  ]
 }
