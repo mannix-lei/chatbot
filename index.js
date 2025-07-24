@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 
-// 加载环境变量
 try {
     require('dotenv').config();
 } catch (e) {
