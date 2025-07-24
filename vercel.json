@@ -3,7 +3,7 @@
   "name": "ai-chat-bot",
   "builds": [
     {
-      "src": "index.js",
+      "src": "api/**/*.js",
       "use": "@vercel/node"
     },
     {
@@ -13,24 +13,12 @@
   ],
   "routes": [
     {
-      "src": "/api/chat",
-      "dest": "/index.js"
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
     },
     {
-      "src": "/style.css",
-      "dest": "/public/style.css"
-    },
-    {
-      "src": "/script.js", 
-      "dest": "/public/script.js"
-    },
-    {
-      "src": "/",
-      "dest": "/public/index.html"
-    },
-    {
-      "src": "/index.html",
-      "dest": "/public/index.html"
+      "src": "/(.*)",
+      "dest": "/public/$1"
     }
   ]
 }
