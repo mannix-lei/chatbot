@@ -9,7 +9,7 @@ if (!apiKey) {
 
 const client = new Mistral({ apiKey: apiKey });
 
-export default async function handler(request, response) {
+module.exports = async (request, response) => {
     // 设置CORS头
     response.setHeader('Access-Control-Allow-Origin', '*');
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
