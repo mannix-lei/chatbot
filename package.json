@@ -1,0 +1,22 @@
+{
+    "name": "chat-bot",
+    "version": "1.0.0",
+    "description": "一个炫酷的AI聊天工具，支持SSE流式响应",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "node index.js",
+        "build": "echo 'No build step required'",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": ["chatbot", "ai", "sse", "mistral", "nodejs"],
+    "author": "mannix",
+    "license": "ISC",
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "dependencies": {
+        "@mistralai/mistralai": "^1.7.5",
+        "dotenv": "^16.0.0"
+    }
+}
