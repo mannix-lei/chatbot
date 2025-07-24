@@ -6,7 +6,8 @@
     "scripts": {
         "start": "node index.js",
         "dev": "node index.js",
-        "build": "echo 'No build step required'",
+        "build": "cp -r public/* dist/ 2>/dev/null || mkdir -p dist && cp -r public/* dist/",
+        "deploy": "wrangler pages publish dist",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": ["chatbot", "ai", "sse", "mistral", "nodejs"],
