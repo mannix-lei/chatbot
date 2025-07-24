@@ -78,25 +78,6 @@ git push -u origin main
    - `MISTRAL_API_KEY`: 你的Mistral API密钥
 5. 点击 "Deploy"
 
-### 4. 配置域名（可选）
-部署完成后，你可以在Vercel Dashboard中配置自定义域名。
-
-## 项目结构
-
-```
-chat-bot/
-├── index.js              # 服务器主文件
-├── package.json           # 项目配置和依赖
-├── vercel.json           # Vercel部署配置
-├── .env.example          # 环境变量模板
-├── .gitignore            # Git忽略文件
-├── README.md             # 项目说明
-└── public/               # 静态文件目录
-    ├── index.html        # 主页面
-    ├── style.css         # 样式文件
-    └── script.js         # 前端逻辑
-```
-
 ## API接口
 
 ### POST /api/chat
