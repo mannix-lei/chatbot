@@ -1,26 +1,36 @@
 {
   "version": 2,
+  "name": "ai-chat-bot",
   "builds": [
     {
       "src": "index.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "index.js"
+      "src": "/api/chat",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/style.css",
+      "dest": "/public/style.css"
+    },
+    {
+      "src": "/script.js", 
+      "dest": "/public/script.js"
     },
     {
       "src": "/(.*)",
-      "dest": "index.js"
+      "dest": "/index.js"
     }
   ],
   "env": {
     "MISTRAL_API_KEY": "@mistral_api_key"
+  },
+  "functions": {
+    "index.js": {
+      "maxDuration": 30
+    }
   }
 }
